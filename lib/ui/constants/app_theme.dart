@@ -17,12 +17,12 @@ TextFormField Border Color - 631D76
 Text and Icon Color for TfF - 707070
 
 */
-
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AppTheme {
   AppTheme._();
-
+  static double screenWidth = window.physicalSize.width;
   static const COLOR_BLACK = Color.fromRGBO(48, 47, 48, 1.0);
   static const COLOR_GREY = Color.fromRGBO(141, 141, 141, 1.0);
 
@@ -55,17 +55,35 @@ class AppTheme {
   // Text Style
   static final TextTheme _textTheme = TextTheme(
     headline1: TextStyle(
-        fontSize: 30.0, color: PRIMARY_COLOR, fontFamily: montserrat, fontWeight: FontWeight.bold),
+        fontSize: 40.0, color: PRIMARY_COLOR, fontFamily: montserrat, fontWeight: FontWeight.bold),
     headline2: TextStyle(fontSize: 22.0),
     headline3: TextStyle(fontSize: 20.0),
     headline4: TextStyle(fontSize: 16.0),
     headline5: TextStyle(fontSize: 14.0),
     headline6: TextStyle(fontSize: 12.0),
     bodyText1: TextStyle(fontSize: 14.0, fontFamily: poppins),
-    bodyText2: TextStyle(fontSize: 20.0, fontFamily: montserrat),
-    button: TextStyle(fontSize: 15.0, fontFamily: poppins),
-    subtitle1: TextStyle(fontSize: 12.0, fontFamily: poppins),
-    subtitle2: TextStyle(fontSize: 12.0),
+    bodyText2: TextStyle(fontSize: 14.0, fontFamily: montserrat),
+    button: TextStyle(fontSize: 14.0, fontFamily: poppins),
+    subtitle1: TextStyle(fontSize: 12.0, fontFamily: poppins, color: COLOR_GREY),
+    subtitle2: TextStyle(fontSize: 12.0, fontFamily: poppins, color: COLOR_BLACK),
+    // subtitle2: TextStyle(fontSize: 12.0),
+  );
+
+  // Small Text Style
+  static final TextTheme _smallTextTheme = TextTheme(
+    headline1: TextStyle(
+        fontSize: 25.0, color: PRIMARY_COLOR, fontFamily: montserrat, fontWeight: FontWeight.bold),
+    headline2: TextStyle(fontSize: 20.0),
+    headline3: TextStyle(fontSize: 18.0),
+    headline4: TextStyle(fontSize: 14.0),
+    headline5: TextStyle(fontSize: 12.0),
+    headline6: TextStyle(fontSize: 10.0),
+    bodyText1: TextStyle(fontSize: 12.0, fontFamily: mavenPro),
+    bodyText2: TextStyle(fontSize: 12.0, fontFamily: mavenPro, color: COLOR_GREY),
+    button: TextStyle(fontSize: 12.0, fontFamily: poppins),
+    subtitle1: TextStyle(fontSize: 10.0, fontFamily: poppins, color: COLOR_GREY),
+    subtitle2: TextStyle(fontSize: 10.0, fontFamily: poppins, color: COLOR_BLACK),
+    // subtitle2: TextStyle(fontSize: 12.0),
   );
 
 // App Theme Data
@@ -74,15 +92,14 @@ class AppTheme {
       accentColor: COLOR_DARK_BLUE,
       scaffoldBackgroundColor: SCAFFOLD_COLOR,
       brightness: Brightness.light,
-      textTheme: _textTheme,
-
+      textTheme: screenWidth < 500 ? _smallTextTheme : _textTheme,
       // Text_Form_Field Theme
       inputDecorationTheme: InputDecorationTheme(
           isDense: true,
 
           //prefixStyle: TextStyle(color: _lightIconColor),
           // hintStyle: TextStyle(fontFamily: mavenPro, fontSize: 18.0),
-          labelStyle: TextStyle(fontFamily: mavenPro, fontSize: 16.0),
+          labelStyle: TextStyle(fontFamily: mavenPro),
           border: OutlineInputBorder(
               borderSide: BorderSide(width: 5.0),
               borderRadius: BorderRadius.all(
@@ -111,6 +128,7 @@ class AppTheme {
           ),
       buttonTheme: ButtonThemeData(
         buttonColor: BUTTON_COLOR_GREEN,
+        // height: 30.0,
         textTheme: ButtonTextTheme.primary,
       ));
 }

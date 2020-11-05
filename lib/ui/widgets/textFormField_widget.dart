@@ -1,7 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:tajicEasy/ui/constants/app_theme.dart';
 
 class TextFieldWidget extends StatelessWidget {
+  static double screenWidth = window.physicalSize.width;
+
   final String labelText;
   final String hintText;
   final Function(String) onChanged;
@@ -43,10 +47,9 @@ class TextFieldWidget extends StatelessWidget {
       obscureText: obscureText,
       cursorWidth: 2.0,
       style: TextStyle(
-        fontFamily: AppTheme.mavenPro,
-        color: AppTheme.PRIMARY_COLOR,
-        fontSize: 16.0,
-      ),
+          fontFamily: AppTheme.mavenPro,
+          color: AppTheme.PRIMARY_COLOR,
+          fontSize: screenWidth < 500 ? 13.0 : 16.0),
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,

@@ -1,7 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
 import 'package:tajicEasy/ui/constants/app_theme.dart';
 import 'package:tajicEasy/ui/widgets/textFormField_widget.dart';
+
+import 'sign_up.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -16,26 +20,24 @@ class _LoginState extends State<Login> {
     final ThemeData themeData = Theme.of(context);
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
+        resizeToAvoidBottomPadding: true,
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
             child: Container(
           width: Get.width,
-          height: Get.height,
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  // height: 300,
-                  alignment: Alignment.topCenter,
-                  decoration: BoxDecoration(
-                      // color: Colors.red,
-                      image: DecorationImage(
-                          fit: BoxFit.fitHeight, image: AssetImage("assets/images/loginImg.png"))),
-                  // child: Image.asset("assets/images/loginImg.png"),
-                ),
+              //* Header Image
+              Container(
+                width: double.infinity,
+                height: Get.height / 4,
+                alignment: Alignment.topCenter,
+                decoration: BoxDecoration(
+                    // color: Colors.red,
+                    image: DecorationImage(
+                        fit: BoxFit.cover, image: AssetImage("assets/images/loginImg.png"))),
+                // child: Image.asset("assets/images/loginImg.png"),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
@@ -48,12 +50,15 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              Expanded(
-                flex: 2,
+              SizedBox(height: 10.0),
+              Container(
+                width: double.infinity,
+                height: Get.height,
+                alignment: Alignment.topCenter,
                 child: Padding(
-                  padding: const EdgeInsets.all(30.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.start,
+                    //*  Login Section
                     children: [
                       TextFieldWidget(
                         hintText: "Email ID",
@@ -86,11 +91,43 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
+                      //* Login Button
                       RaisedButton(
                         color: AppTheme.COLOR_DARK_BLUE,
                         onPressed: () {},
                         child: Text("LOGIN"),
                       ),
+                      Container(
+                        width: double.infinity,
+                        // color: Colors.red,
+                        alignment: Alignment.center,
+                        child: Text("----OR----", style: themeData.textTheme.subtitle1),
+                      ),
+                      //* Google Sign In Button
+                      RaisedButton.icon(
+                          color: Color(0xffea4335),
+                          onPressed: () {},
+                          icon: Icon(FlutterIcons.google_ant),
+                          label: Text("Sign in with Google")),
+                      SizedBox(height: 10.0),
+                      //* Sign Up Text
+                      Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(text: 'Don\'t have an account ? '),
+                            TextSpan(
+                              text: 'Sign Up',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, color: AppTheme.PRIMARY_COLOR),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  // single tapped
+                                  Get.to(SignUp());
+                                },
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
