@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:tajicEasy/ui/constants/app_theme.dart';
+import 'package:tajicEasy/constants/app_theme.dart';
 
 class TextFieldWidget extends StatelessWidget {
   static double screenWidth = window.physicalSize.width;

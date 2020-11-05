@@ -1,11 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
-import 'package:tajicEasy/ui/constants/app_theme.dart';
+import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/ui/widgets/textFormField_widget.dart';
-
-import 'login_in.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -22,7 +19,7 @@ class _SignUpState extends State<SignUp> {
       child: Scaffold(
         // resizeToAvoidBottomInset: true,
         // resizeToAvoidBottomPadding: true,
-        backgroundColor: Colors.white,
+        // backgroundColor: Colors.white,
         body: SingleChildScrollView(
             child: Container(
           width: Get.width,
@@ -42,9 +39,9 @@ class _SignUpState extends State<SignUp> {
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: ListTile(
-                  title: Text("Welcome.", style: themeData.textTheme.headline1),
+                  title: Text("Sign Up.", style: themeData.textTheme.headline1),
                   subtitle: Text(
-                    "Please Login to start",
+                    "Create a new account",
                     textAlign: TextAlign.start,
                     style: themeData.textTheme.bodyText1.copyWith(color: AppTheme.COLOR_DARK_BLUE),
                   ),

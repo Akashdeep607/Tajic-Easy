@@ -56,13 +56,13 @@ class AppTheme {
   static final TextTheme _textTheme = TextTheme(
     headline1: TextStyle(
         fontSize: 40.0, color: PRIMARY_COLOR, fontFamily: montserrat, fontWeight: FontWeight.bold),
-    headline2: TextStyle(fontSize: 22.0),
+    headline2: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: COLOR_DARK_BLUE),
     headline3: TextStyle(fontSize: 20.0),
     headline4: TextStyle(fontSize: 16.0),
     headline5: TextStyle(fontSize: 14.0),
     headline6: TextStyle(fontSize: 12.0),
-    bodyText1: TextStyle(fontSize: 14.0, fontFamily: poppins),
-    bodyText2: TextStyle(fontSize: 14.0, fontFamily: montserrat),
+    bodyText1: TextStyle(fontSize: 14.0, fontFamily: montserrat),
+    bodyText2: TextStyle(fontSize: 14.0, fontFamily: poppins),
     button: TextStyle(fontSize: 14.0, fontFamily: poppins),
     subtitle1: TextStyle(fontSize: 12.0, fontFamily: poppins, color: COLOR_GREY),
     subtitle2: TextStyle(fontSize: 12.0, fontFamily: poppins, color: COLOR_BLACK),
@@ -90,7 +90,7 @@ class AppTheme {
   static final ThemeData themeData = ThemeData(
       primaryColor: PRIMARY_COLOR,
       accentColor: COLOR_DARK_BLUE,
-      scaffoldBackgroundColor: SCAFFOLD_COLOR,
+      scaffoldBackgroundColor: COLOR_WHITE,
       brightness: Brightness.light,
       textTheme: screenWidth < 500 ? _smallTextTheme : _textTheme,
       // Text_Form_Field Theme

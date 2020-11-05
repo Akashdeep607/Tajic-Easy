@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
-import 'package:tajicEasy/ui/constants/app_theme.dart';
+import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/ui/widgets/textFormField_widget.dart';
 
 import 'sign_up.dart';
@@ -20,9 +20,9 @@ class _LoginState extends State<Login> {
     final ThemeData themeData = Theme.of(context);
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: true,
-        resizeToAvoidBottomPadding: true,
-        backgroundColor: Colors.white,
+        // resizeToAvoidBottomInset: true,
+        // resizeToAvoidBottomPadding: true,
+        // backgroundColor: Colors.white,
         body: SingleChildScrollView(
             child: Container(
           width: Get.width,
