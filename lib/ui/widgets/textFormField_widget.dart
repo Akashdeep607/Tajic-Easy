@@ -21,6 +21,7 @@ class TextFieldWidget extends StatelessWidget {
   final Widget prefixIcon;
   final Widget suffixIcon;
   final bool autoValidate;
+  final String Function(String) validator;
 
   const TextFieldWidget(
       {Key key,
@@ -38,13 +39,18 @@ class TextFieldWidget extends StatelessWidget {
       this.decoration,
       this.prefixIcon,
       this.suffixIcon,
-      this.autoValidate})
+      this.autoValidate,
+      this.validator})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: keyboardType,
       obscureText: obscureText,
+      controller: controller,
+      onSaved: onSaved,
+      onChanged: onChanged,
+      validator: validator,
       cursorWidth: 2.0,
       style: TextStyle(
           fontFamily: AppTheme.mavenPro,

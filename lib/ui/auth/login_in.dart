@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
+import 'package:tajicEasy/test.dart';
 import 'package:tajicEasy/ui/widgets/textFormField_widget.dart';
 
 import 'sign_up.dart';
@@ -14,7 +15,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   bool isVisible = true;
-
+  final TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
@@ -61,6 +62,7 @@ class _LoginState extends State<Login> {
                     //*  Login Section
                     children: [
                       TextFieldWidget(
+                        controller: emailController,
                         hintText: "Email ID",
                         labelText: "Email ID",
                         prefixIcon: Icon(Icons.email),
@@ -114,11 +116,13 @@ class _LoginState extends State<Login> {
                       Text.rich(
                         TextSpan(
                           children: [
-                            TextSpan(text: 'Don\'t have an account ? '),
+                            TextSpan(
+                                text: 'Don\'t have an account ? ',
+                                style: Theme.of(context).textTheme.subtitle1),
                             TextSpan(
                               text: 'Sign Up',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, color: AppTheme.PRIMARY_COLOR),
+                              style: Theme.of(context).textTheme.subtitle1.copyWith(
+                                  color: AppTheme.PRIMARY_COLOR, fontWeight: FontWeight.bold),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   // single tapped

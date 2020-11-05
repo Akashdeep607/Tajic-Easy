@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tajicEasy/ui/auth/login_in.dart';
 import 'package:tajicEasy/ui/init/splash_screen.dart';
 
 import 'constants/app_theme.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
-      home: SplashScreen(),
+      home: Login(),
     );
   }
 }

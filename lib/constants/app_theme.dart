@@ -61,8 +61,8 @@ class AppTheme {
     headline4: TextStyle(fontSize: 16.0),
     headline5: TextStyle(fontSize: 14.0),
     headline6: TextStyle(fontSize: 12.0),
-    bodyText1: TextStyle(fontSize: 14.0, fontFamily: montserrat),
-    bodyText2: TextStyle(fontSize: 14.0, fontFamily: poppins),
+    bodyText1: TextStyle(fontSize: 16.0, fontFamily: montserrat),
+    bodyText2: TextStyle(fontSize: 16.0, fontFamily: poppins),
     button: TextStyle(fontSize: 14.0, fontFamily: poppins),
     subtitle1: TextStyle(fontSize: 12.0, fontFamily: poppins, color: COLOR_GREY),
     subtitle2: TextStyle(fontSize: 12.0, fontFamily: poppins, color: COLOR_BLACK),
@@ -88,10 +88,12 @@ class AppTheme {
 
 // App Theme Data
   static final ThemeData themeData = ThemeData(
+      fontFamily: montserrat,
       primaryColor: PRIMARY_COLOR,
       accentColor: COLOR_DARK_BLUE,
       scaffoldBackgroundColor: COLOR_WHITE,
       brightness: Brightness.light,
+      appBarTheme: AppBarTheme(centerTitle: true),
       textTheme: screenWidth < 500 ? _smallTextTheme : _textTheme,
       // Text_Form_Field Theme
       inputDecorationTheme: InputDecorationTheme(
