@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
@@ -27,6 +28,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     return Scaffold(
       body: PageView.builder(
         controller: pageController,
@@ -47,9 +49,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       bottomSheet: currentIndex != _slides.length - 1
           ? Container(
               color: AppTheme.PRIMARY_COLOR,
-              height: 50.0,
+              height: 0.09.sh,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 50.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   //crossAxisAlignment:CrossAxisAlignment.center,
@@ -63,7 +65,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         "SKIP >>>",
                         style: Theme.of(context)
                             .textTheme
-                            .bodyText2
+                            .bodyText1
                             .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                       ),
                     ),
@@ -82,7 +84,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                           "NEXT",
                           style: Theme.of(context)
                               .textTheme
-                              .bodyText2
+                              .bodyText1
                               .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                         )),
                   ],
@@ -97,7 +99,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 alignment: Alignment.center,
                 color: AppTheme.PRIMARY_COLOR,
                 width: double.infinity,
-                height: 50,
+                height: 0.09.sh,
                 child: Text(
                   "<<< GET STARTED >>>",
                   style: Theme.of(context).textTheme.bodyText2.copyWith(color: Colors.white),

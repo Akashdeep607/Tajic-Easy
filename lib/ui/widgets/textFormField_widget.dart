@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
 
 class TextFieldWidget extends StatelessWidget {
@@ -44,6 +45,7 @@ class TextFieldWidget extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     return TextFormField(
       keyboardType: keyboardType,
       obscureText: obscureText,
@@ -53,9 +55,10 @@ class TextFieldWidget extends StatelessWidget {
       validator: validator,
       cursorWidth: 2.0,
       style: TextStyle(
-          fontFamily: AppTheme.mavenPro,
-          color: AppTheme.PRIMARY_COLOR,
-          fontSize: screenWidth < 500 ? 13.0 : 16.0),
+        fontFamily: AppTheme.mavenPro,
+        color: AppTheme.PRIMARY_COLOR,
+        fontSize: 45.ssp,
+      ),
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,
