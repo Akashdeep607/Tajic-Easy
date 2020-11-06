@@ -31,6 +31,7 @@ class AppTheme {
 
 // Main Colors
   static const PRIMARY_COLOR = Color(0xff631D76);
+  static const PRIMARY_COLOR_RGB = Color.fromRGBO(99, 29, 118, 0.5);
   static const SECONDARY_COLOR_1 = Color(0xff272727);
   static const SECONDARY_COLOR_2 = Color(0xff201A23);
   static const SCAFFOLD_COLOR = Color(0xffFBFBFB);
@@ -54,35 +55,17 @@ class AppTheme {
 
   // Text Style
   static final TextTheme _textTheme = TextTheme(
-    headline1: TextStyle(
-        fontSize: 40.0, color: PRIMARY_COLOR, fontFamily: montserrat, fontWeight: FontWeight.bold),
-    headline2: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: COLOR_DARK_BLUE),
-    headline3: TextStyle(fontSize: 20.0),
-    headline4: TextStyle(fontSize: 16.0),
-    headline5: TextStyle(fontSize: 14.0),
-    headline6: TextStyle(fontSize: 12.0),
-    bodyText1: TextStyle(fontSize: 16.0, fontFamily: montserrat),
-    bodyText2: TextStyle(fontSize: 16.0, fontFamily: poppins),
-    button: TextStyle(fontSize: 14.0, fontFamily: poppins),
-    subtitle1: TextStyle(fontSize: 12.0, fontFamily: poppins, color: COLOR_GREY),
-    subtitle2: TextStyle(fontSize: 12.0, fontFamily: poppins, color: COLOR_BLACK),
-    // subtitle2: TextStyle(fontSize: 12.0),
-  );
-
-  // Small Text Style
-  static final TextTheme _smallTextTheme = TextTheme(
-    headline1: TextStyle(
-        fontSize: 25.0, color: PRIMARY_COLOR, fontFamily: montserrat, fontWeight: FontWeight.bold),
-    headline2: TextStyle(fontSize: 20.0),
-    headline3: TextStyle(fontSize: 18.0),
-    headline4: TextStyle(fontSize: 14.0),
-    headline5: TextStyle(fontSize: 12.0),
-    headline6: TextStyle(fontSize: 10.0),
-    bodyText1: TextStyle(fontSize: 12.0, fontFamily: mavenPro),
-    bodyText2: TextStyle(fontSize: 12.0, fontFamily: mavenPro, color: COLOR_GREY),
-    button: TextStyle(fontSize: 12.0, fontFamily: poppins),
-    subtitle1: TextStyle(fontSize: 10.0, fontFamily: poppins, color: COLOR_GREY),
-    subtitle2: TextStyle(fontSize: 10.0, fontFamily: poppins, color: COLOR_BLACK),
+    headline1: TextStyle(color: PRIMARY_COLOR, fontFamily: montserrat, fontWeight: FontWeight.bold),
+    headline2: TextStyle(fontWeight: FontWeight.bold, color: COLOR_DARK_BLUE),
+    headline3: TextStyle(fontFamily: montserrat),
+    headline4: TextStyle(fontFamily: montserrat),
+    headline5: TextStyle(fontFamily: poppins, color: COLOR_GREY),
+    headline6: TextStyle(fontFamily: montserrat),
+    bodyText1: TextStyle(fontFamily: montserrat),
+    bodyText2: TextStyle(fontFamily: poppins),
+    button: TextStyle(fontFamily: poppins),
+    subtitle1: TextStyle(fontFamily: poppins, color: COLOR_GREY),
+    subtitle2: TextStyle(fontFamily: poppins, color: COLOR_BLACK),
     // subtitle2: TextStyle(fontSize: 12.0),
   );
 
@@ -94,7 +77,7 @@ class AppTheme {
       scaffoldBackgroundColor: COLOR_WHITE,
       brightness: Brightness.light,
       appBarTheme: AppBarTheme(centerTitle: true),
-      textTheme: screenWidth < 500 ? _smallTextTheme : _textTheme,
+      textTheme: _textTheme,
       // Text_Form_Field Theme
       inputDecorationTheme: InputDecorationTheme(
           isDense: true,

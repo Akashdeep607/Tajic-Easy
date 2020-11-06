@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
-import 'package:tajicEasy/test.dart';
 import 'package:tajicEasy/ui/widgets/textFormField_widget.dart';
 
 import 'sign_up.dart';
