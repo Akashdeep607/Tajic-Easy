@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
@@ -74,7 +75,7 @@ class _SignUpState extends State<SignUp> {
                           controller: fullNameController,
                           hintText: "Full Name",
                           labelText: "Full Name",
-                          prefixIcon: Icon(Icons.email),
+                          prefixIcon: Icon(Icons.person),
                         ),
                         SizedBox(height: 30.w),
                         TextFieldWidget(
@@ -82,7 +83,7 @@ class _SignUpState extends State<SignUp> {
                           controller: phoneController,
                           hintText: "Mobile Number",
                           labelText: "Mobile Number",
-                          prefixIcon: Icon(Icons.email),
+                          prefixIcon: Icon(FlutterIcons.mobile1_ant),
                         ),
                         SizedBox(height: 30.w),
                         TextFieldWidget(
