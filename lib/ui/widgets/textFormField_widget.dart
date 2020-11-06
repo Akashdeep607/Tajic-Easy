@@ -64,7 +64,7 @@ class TextFieldWidget extends StatelessWidget {
         labelText: labelText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        isDense: true,
+        // isDense: true,
       ),
     );
   }

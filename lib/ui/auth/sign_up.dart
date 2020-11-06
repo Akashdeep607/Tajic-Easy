@@ -75,7 +75,7 @@ class _SignUpState extends State<SignUp> {
                           controller: fullNameController,
                           hintText: "Full Name",
                           labelText: "Full Name",
-                          prefixIcon: Icon(Icons.person),
+                          prefixIcon: Icon(Icons.person, size: 50.w),
                         ),
                         SizedBox(height: 30.w),
                         TextFieldWidget(
@@ -83,7 +83,7 @@ class _SignUpState extends State<SignUp> {
                           controller: phoneController,
                           hintText: "Mobile Number",
                           labelText: "Mobile Number",
-                          prefixIcon: Icon(FlutterIcons.mobile1_ant),
+                          prefixIcon: Icon(FlutterIcons.mobile1_ant, size: 50.w),
                         ),
                         SizedBox(height: 30.w),
                         TextFieldWidget(
@@ -91,7 +91,7 @@ class _SignUpState extends State<SignUp> {
                           controller: emailController,
                           hintText: "Email ID",
                           labelText: "Email ID",
-                          prefixIcon: Icon(Icons.email),
+                          prefixIcon: Icon(Icons.email, size: 50.w),
                         ),
                         SizedBox(height: 30.w),
                         TextFieldWidget(
@@ -100,7 +100,7 @@ class _SignUpState extends State<SignUp> {
                           obscureText: isVisible,
                           hintText: "Password",
                           labelText: "Password",
-                          prefixIcon: Icon(Icons.lock),
+                          prefixIcon: Icon(Icons.lock, size: 50.w),
                           suffixIcon: IconButton(
                               icon: isVisible ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
                               onPressed: () {

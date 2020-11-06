@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
                           controller: emailController,
                           hintText: "Email ID",
                           labelText: "Email ID",
-                          prefixIcon: Icon(Icons.email),
+                          prefixIcon: Icon(Icons.email, size: 50.w),
                         ),
                         SizedBox(height: 30.w),
                         TextFieldWidget(
@@ -78,7 +78,7 @@ class _LoginState extends State<Login> {
                           obscureText: isVisible,
                           hintText: "Password",
                           labelText: "Password",
-                          prefixIcon: Icon(Icons.lock),
+                          prefixIcon: Icon(Icons.lock, size: 50.w),
                           suffixIcon: IconButton(
                               icon: isVisible ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
                               onPressed: () {
