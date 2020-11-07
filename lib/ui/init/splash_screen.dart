@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tajicEasy/ui/pages/home_page.dart';
 
@@ -30,12 +31,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: Image.asset(
-          "assets/images/logo.png",
-          width: 120,
+          "assets/images/logo3.png",
+          width: 0.8.sw,
         ),
       ),
     );

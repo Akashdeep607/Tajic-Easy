@@ -4,16 +4,16 @@ import 'package:get/get.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/ui/pages/home_page.dart';
 
-class SearchPage extends StatefulWidget {
+class Destination extends StatefulWidget {
   final String pickPlace;
 
-  const SearchPage({Key key, this.pickPlace}) : super(key: key);
+  const Destination({Key key, this.pickPlace}) : super(key: key);
 
   @override
-  _SearchPageState createState() => _SearchPageState();
+  _DestinationState createState() => _DestinationState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _DestinationState extends State<Destination> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
@@ -134,7 +134,7 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
-  Widget _topLocation(String placeName, Icon icon) {
+  Widget _topLocation(String destination, Icon icon) {
     return Container(
       width: 0.4.sw,
       height: 0.08.sh,
@@ -143,12 +143,12 @@ class _SearchPageState extends State<SearchPage> {
         onTap: () {},
         child: GestureDetector(
           onTap: () {
-            print("Pressed : $placeName");
+            print("Pressed : $destination");
             setState(() {
-              SearchPage(pickPlace: placeName);
+              Destination(pickPlace: destination);
             });
             Get.to(HomePage(
-              source: placeName,
+              destination: destination,
             ));
           },
           child: Row(
@@ -158,7 +158,7 @@ class _SearchPageState extends State<SearchPage> {
               icon,
               SizedBox(width: 15.w),
               Text(
-                placeName,
+                destination,
                 style: TextStyle(fontSize: 45.ssp),
               ),
             ],

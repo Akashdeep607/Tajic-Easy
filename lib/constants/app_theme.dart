@@ -78,6 +78,7 @@ class AppTheme {
       brightness: Brightness.light,
       appBarTheme: AppBarTheme(centerTitle: true),
       textTheme: _textTheme,
+
       // Text_Form_Field Theme
       inputDecorationTheme: InputDecorationTheme(
           isDense: true,

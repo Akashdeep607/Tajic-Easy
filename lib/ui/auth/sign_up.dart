@@ -80,6 +80,7 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 30.w),
                         TextFieldWidget(
                           validator: FormValidation.phoneNumberValidation,
+                          keyboardType: TextInputType.phone,
                           controller: phoneController,
                           hintText: "Mobile Number",
                           labelText: "Mobile Number",
@@ -89,6 +90,7 @@ class _SignUpState extends State<SignUp> {
                         TextFieldWidget(
                           validator: FormValidation.emailValidation,
                           controller: emailController,
+                          keyboardType: TextInputType.emailAddress,
                           hintText: "Email ID",
                           labelText: "Email ID",
                           prefixIcon: Icon(Icons.email, size: 50.w),

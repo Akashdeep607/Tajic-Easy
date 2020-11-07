@@ -1,36 +1,67 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:tajicEasy/ui/pages/destination.dart';
+import 'package:tajicEasy/ui/pages/search_page.dart';
 
 class HomePage extends StatelessWidget {
+  final String source;
+  final String destination;
+
+  const HomePage({this.source, this.destination});
   @override
   Widget build(BuildContext context) {
     // ScreenUtil.init(context);
     ScreenUtil.init(context, designSize: Size(1080, 1334), allowFontScaling: true);
 
     return Scaffold(
+      // AppBar
+      appBar: AppBar(
+        centerTitle: false,
+        elevation: 0.0,
+        title: Text(
+          "PLAN TRIP",
+          style: Theme.of(context)
+              .textTheme
+              .headline3
+              .copyWith(color: Colors.white, fontSize: 50.ssp, fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notifications),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.exit_to_app),
+          )
+        ],
+      ),
+
+      // BODY
       body: Column(
         children: [
           Container(
             width: double.infinity,
-            height: 0.5.sh,
+            height: 0.4.sh,
             color: AppTheme.PRIMARY_COLOR,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               //crossAxisAlignment:CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 50.w, right: 50.w, top: 60.w),
-                  child: Container(
-                    width: double.infinity,
-                    child: Text(
-                      "PLAN TRIP",
-                      style: Theme.of(context).textTheme.headline3.copyWith(
-                          color: Colors.white, fontSize: 50.ssp, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(left: 50.w, right: 50.w, top: 120.w),
+                //   child: Container(
+                //     width: double.infinity,
+                //     child: Text(
+                //       "PLAN TRIP",
+                //       style: Theme.of(context).textTheme.headline3.copyWith(
+                //           color: Colors.white, fontSize: 50.ssp, fontWeight: FontWeight.bold),
+                //     ),
+                //   ),
+                // ),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.9),
@@ -50,9 +81,12 @@ class HomePage extends StatelessWidget {
                             width: 70.w,
                           ),
                         ),
-                        title: Text(
-                          "SOURCE",
-                          style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 40.ssp),
+                        title: GestureDetector(
+                          onTap: () => Get.to(SearchPage()),
+                          child: Text(
+                            source != null ? source : "SOURCE",
+                            style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 40.ssp),
+                          ),
                         ),
                       ),
                       // Divider(color: AppTheme.COLOR_GREY, height: 1.0),
@@ -64,9 +98,12 @@ class HomePage extends StatelessWidget {
                             width: 70.w,
                           ),
                         ),
-                        title: Text(
-                          "DESTINATION",
-                          style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 40.ssp),
+                        title: GestureDetector(
+                          onTap: () => Get.to(Destination()),
+                          child: Text(
+                            source != null ? source : "DESTINATION",
+                            style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 40.ssp),
+                          ),
                         ),
                       ),
                       // Divider(color: AppTheme.COLOR_GREY, height: 1.0),
@@ -80,9 +117,12 @@ class HomePage extends StatelessWidget {
                                 color: Colors.black,
                               ),
                             )),
-                        title: Text(
-                          "DATE",
-                          style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 40.ssp),
+                        title: GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            "DATE",
+                            style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 40.ssp),
+                          ),
                         ),
                       ),
                       // Divider(color: AppTheme.COLOR_GREY, height: 1.0),
@@ -93,7 +133,7 @@ class HomePage extends StatelessWidget {
                   color: AppTheme.BUTTON_COLOR_RED,
                   height: 0.06.sh,
                   minWidth: 0.9.sw,
-                  onPressed: () {},
+                  onPressed: () => Get.to(SearchPage()),
                   child: Text(
                     "SEARCH",
                     style: Theme.of(context)
@@ -106,9 +146,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Container(
-              color: Colors.white,
-            ),
+            child: Container(),
           ),
         ],
       ),
