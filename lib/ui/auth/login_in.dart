@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/services/formValidation.dart';
 import 'package:tajicEasy/ui/widgets/textFormField_widget.dart';
-
 import 'sign_up.dart';
 
 class Login extends StatefulWidget {
@@ -23,11 +22,11 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     ScreenUtil.init(context);
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-            child: Container(
-          width: Get.width,
+    return Scaffold(
+      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomPadding: false,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               //* Header Image
@@ -55,7 +54,8 @@ class _LoginState extends State<Login> {
               SizedBox(height: 30.w),
               Container(
                 width: double.infinity,
-                height: Get.height,
+                // color: Colors.red,
+                // height: 0.5.sh,
                 alignment: Alignment.topCenter,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 100.w),
@@ -88,6 +88,7 @@ class _LoginState extends State<Login> {
                               }),
                         ),
                         SizedBox(height: 20.w),
+
                         GestureDetector(
                           onTap: () {},
                           child: Container(
@@ -116,7 +117,7 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 20.w),
+                        SizedBox(height: 15.w),
                         Container(
                           width: double.infinity,
                           // color: Colors.red,
@@ -126,14 +127,14 @@ class _LoginState extends State<Login> {
                                 fontSize: 40.ssp,
                               )),
                         ),
-                        SizedBox(height: 20.w),
+                        SizedBox(height: 15.w),
                         //* Google Sign In Button
                         Container(
                           width: 0.6.sw,
                           height: 0.06.sh,
                           child: MaterialButton(
                             color: Color(0xffea4335),
-                            onPressed: _validateAndSave,
+                            onPressed: () {},
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -149,7 +150,7 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 20.0),
+                        SizedBox(height: 15.0),
                         //* Sign Up Text
                         Text.rich(
                           TextSpan(
@@ -174,7 +175,7 @@ class _LoginState extends State<Login> {
                               ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -182,7 +183,7 @@ class _LoginState extends State<Login> {
               ),
             ],
           ),
-        )),
+        ),
       ),
     );
   }

@@ -53,6 +53,8 @@ class FormValidation {
       return "*Required";
     } else if (value.length < 10) {
       return "Please enter 10 digit phone number";
+    } else if (value.length > 10) {
+      return "Mobile number cannot be greater than 10 digits";
     } else
       return null;
   }

@@ -109,7 +109,7 @@ class _SearchPageState extends State<SearchPage> {
               style: TextStyle(color: Colors.white, fontSize: 50.ssp),
               decoration: InputDecoration(
                 isDense: true,
-                hintText: "Enter City Name",
+                hintText: "Search by City or Bus Service",
                 hintStyle: TextStyle(color: Colors.white, fontSize: 50.ssp),
                 fillColor: AppTheme.PRIMARY_COLOR,
                 suffixIcon: IconButton(

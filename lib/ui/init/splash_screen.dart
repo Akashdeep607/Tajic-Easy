@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:tajicEasy/ui/auth/login_in.dart';
 import 'package:tajicEasy/ui/pages/home_page.dart';
 
 import 'mySharedPreferences.dart';
@@ -49,6 +50,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   onDoneLoadind() async {
-    Get.offAll(isFirstTimeOpen ? HomePage() : OnBoardingPage());
+    Get.offAll(isFirstTimeOpen ? Login() : OnBoardingPage());
   }
 }

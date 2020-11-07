@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/models/onBoarding_model.dart';
+import 'package:tajicEasy/ui/auth/login_in.dart';
 import 'package:tajicEasy/ui/pages/home_page.dart';
 
 import 'mySharedPreferences.dart';
@@ -93,7 +94,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             )
           : InkWell(
               onTap: () {
-                Get.offAll(HomePage());
+                Get.offAll(Login());
               },
               child: Container(
                 alignment: Alignment.center,

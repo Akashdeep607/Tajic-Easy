@@ -53,6 +53,7 @@ class TextFieldWidget extends StatelessWidget {
       onSaved: onSaved,
       onChanged: onChanged,
       validator: validator,
+      maxLength: maxLength,
       cursorWidth: 2.0,
       style: TextStyle(
         fontFamily: AppTheme.mavenPro,

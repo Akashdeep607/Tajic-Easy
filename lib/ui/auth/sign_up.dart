@@ -24,14 +24,11 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     ScreenUtil.init(context);
-    return SafeArea(
-      child: Scaffold(
-        // resizeToAvoidBottomInset: true,
-        // resizeToAvoidBottomPadding: true,
-        // backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-            child: Container(
-          width: Get.width,
+    return Scaffold(
+      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomPadding: false,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               //* Header Image
@@ -61,7 +58,6 @@ class _SignUpState extends State<SignUp> {
               SizedBox(height: 30.w),
               Container(
                 width: double.infinity,
-                height: Get.height,
                 alignment: Alignment.topCenter,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 100.w),
@@ -80,7 +76,8 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 30.w),
                         TextFieldWidget(
                           validator: FormValidation.phoneNumberValidation,
-                          keyboardType: TextInputType.phone,
+                          keyboardType: TextInputType.number,
+                          maxLength: 10,
                           controller: phoneController,
                           hintText: "Mobile Number",
                           labelText: "Mobile Number",
@@ -164,7 +161,7 @@ class _SignUpState extends State<SignUp> {
               ),
             ],
           ),
-        )),
+        ),
       ),
     );
   }

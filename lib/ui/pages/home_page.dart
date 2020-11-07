@@ -129,6 +129,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
+
                 MaterialButton(
                   color: AppTheme.BUTTON_COLOR_RED,
                   height: 0.06.sh,
