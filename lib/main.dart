@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tajicEasy/ui/auth/login_in.dart';
-import 'package:tajicEasy/ui/init/splash_screen.dart';
-import 'package:tajicEasy/ui/pages/home_page.dart';
+import 'package:tajicEasy/constants/app_routes.dart';
 import 'package:tajicEasy/ui/widgets/bottomNavigationBar.dart';
 import 'constants/app_theme.dart';
 
@@ -17,7 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.rightToLeft,
       theme: AppTheme.themeData,
-      home: SplashScreen(),
+      initialRoute: "/",
+      getPages: AppRoutes.routes,
+      // home: AppBarNav(),
     );
   }
 }

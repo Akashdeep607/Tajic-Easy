@@ -74,9 +74,9 @@ class AppTheme {
       fontFamily: montserrat,
       primaryColor: PRIMARY_COLOR,
       accentColor: COLOR_DARK_BLUE,
-      scaffoldBackgroundColor: COLOR_WHITE,
+      scaffoldBackgroundColor: Colors.grey[200],
       brightness: Brightness.light,
-      appBarTheme: AppBarTheme(centerTitle: true),
+      // appBarTheme: AppBarTheme(centerTitle: true),
       textTheme: _textTheme,
 
       // Text_Form_Field Theme

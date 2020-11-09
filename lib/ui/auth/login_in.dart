@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/services/formValidation.dart';
+import 'package:tajicEasy/ui/widgets/bottomNavigationBar.dart';
 import 'package:tajicEasy/ui/widgets/textFormField_widget.dart';
 import 'sign_up.dart';
 
@@ -134,7 +135,9 @@ class _LoginState extends State<Login> {
                           height: 0.06.sh,
                           child: MaterialButton(
                             color: Color(0xffea4335),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.offAll(AppMain());
+                            },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [

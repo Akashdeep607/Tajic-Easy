@@ -5,9 +5,9 @@ import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/ui/pages/home_page.dart';
 
 class SearchPage extends StatefulWidget {
-  final String pickPlace;
+  // final String pickPlace;
 
-  const SearchPage({Key key, this.pickPlace}) : super(key: key);
+  // const SearchPage({Key key, this.pickPlace}) : super(key: key);
 
   @override
   _SearchPageState createState() => _SearchPageState();
@@ -28,7 +28,8 @@ class _SearchPageState extends State<SearchPage> {
         children: [
           Container(
             alignment: Alignment.centerLeft,
-            color: AppTheme.COLOR_DARK_BLUE,
+            // color: AppTheme.COLOR_DARK_BLUE,
+            color: Color(0xff4A4A4A),
             width: 1.sw,
             height: 0.07.sh,
             child: Padding(
@@ -144,12 +145,7 @@ class _SearchPageState extends State<SearchPage> {
         child: GestureDetector(
           onTap: () {
             print("Pressed : $placeName");
-            setState(() {
-              SearchPage(pickPlace: placeName);
-            });
-            Get.to(HomePage(
-              source: placeName,
-            ));
+            Get.toNamed('/appMain', arguments: '$placeName');
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

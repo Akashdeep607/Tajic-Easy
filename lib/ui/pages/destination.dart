@@ -5,9 +5,9 @@ import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/ui/pages/home_page.dart';
 
 class Destination extends StatefulWidget {
-  final String pickPlace;
+  // final String pickPlace;
 
-  const Destination({Key key, this.pickPlace}) : super(key: key);
+  // const Destination({Key key, this.pickPlace}) : super(key: key);
 
   @override
   _DestinationState createState() => _DestinationState();
@@ -109,7 +109,7 @@ class _DestinationState extends State<Destination> {
               style: TextStyle(color: Colors.white, fontSize: 50.ssp),
               decoration: InputDecoration(
                 isDense: true,
-                hintText: "Enter City Name",
+                hintText: "Select Destination",
                 hintStyle: TextStyle(color: Colors.white, fontSize: 50.ssp),
                 fillColor: AppTheme.PRIMARY_COLOR,
                 suffixIcon: IconButton(
@@ -134,7 +134,7 @@ class _DestinationState extends State<Destination> {
     );
   }
 
-  Widget _topLocation(String destination, Icon icon) {
+  Widget _topLocation(String placeName, Icon icon) {
     return Container(
       width: 0.4.sw,
       height: 0.08.sh,
@@ -143,13 +143,9 @@ class _DestinationState extends State<Destination> {
         onTap: () {},
         child: GestureDetector(
           onTap: () {
-            print("Pressed : $destination");
-            setState(() {
-              Destination(pickPlace: destination);
-            });
-            Get.to(HomePage(
-              destination: destination,
-            ));
+            print("Pressed : $placeName");
+
+            Get.toNamed('/home/$placeName');
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -158,7 +154,7 @@ class _DestinationState extends State<Destination> {
               icon,
               SizedBox(width: 15.w),
               Text(
-                destination,
+                placeName,
                 style: TextStyle(fontSize: 45.ssp),
               ),
             ],

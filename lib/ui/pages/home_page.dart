@@ -7,10 +7,6 @@ import 'package:tajicEasy/ui/pages/destination.dart';
 import 'package:tajicEasy/ui/pages/search_page.dart';
 
 class HomePage extends StatelessWidget {
-  final String source;
-  final String destination;
-
-  const HomePage({this.source, this.destination});
   @override
   Widget build(BuildContext context) {
     // ScreenUtil.init(context);
@@ -82,9 +78,10 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         title: GestureDetector(
-                          onTap: () => Get.to(SearchPage()),
+                          onTap: () => Get.toNamed('/source'),
                           child: Text(
-                            source != null ? source : "SOURCE",
+                            Get.arguments != null ? Get.arguments : "SOURCE",
+                            // Get.parameters['value'] != null ? Get.parameters['value'] : "SOURCE",
                             style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 40.ssp),
                           ),
                         ),
@@ -99,9 +96,9 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         title: GestureDetector(
-                          onTap: () => Get.to(Destination()),
+                          onTap: () => Get.toNamed('/source'),
                           child: Text(
-                            source != null ? source : "DESTINATION",
+                            Get.arguments != null ? Get.arguments : "DESTINATION",
                             style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 40.ssp),
                           ),
                         ),

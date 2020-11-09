@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tajicEasy/constants/app_theme.dart';
 import 'package:tajicEasy/ui/pages/home_page.dart';
-import 'package:tajicEasy/ui/pages/myBooking_page.dart';
+import 'package:tajicEasy/ui/pages/mybookings/myBooking_page.dart';
 import 'package:tajicEasy/ui/pages/rewards_page.dart';
-import 'package:tajicEasy/ui/pages/userProfile_page.dart';
+import 'package:tajicEasy/ui/pages/userprofile/userProfile_page.dart';
 
 class AppMain extends StatefulWidget {
   @override
@@ -27,6 +27,7 @@ class _AppMainState extends State<AppMain> {
       ].elementAt(_currentIndex),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
+
         // fixedColor: Colors.red,
         unselectedItemColor: Colors.grey[800],
         selectedLabelStyle: GoogleFonts.poppins(fontSize: 40.ssp),
@@ -47,7 +48,7 @@ class _AppMainState extends State<AppMain> {
           ),
           BottomNavigationBarItem(
             icon: Icon(FlutterIcons.user_circle_faw5s),
-            label: "Profile",
+            label: "My Account",
           ),
         ],
         onTap: (index) {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tajicEasy/ui/pages/myBooking_cancelled.dart';
-import 'package:tajicEasy/ui/pages/myBooking_completed.dart';
+import 'package:tajicEasy/ui/pages/mybookings/myBooking_cancelled.dart';
+import 'package:tajicEasy/ui/pages/mybookings/myBooking_completed.dart';
+import 'package:tajicEasy/ui/widgets/bottomNavigationBar.dart';
 
 class MyBookingPage extends StatelessWidget {
   @override
@@ -11,6 +12,7 @@ class MyBookingPage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+          // bottomNavigationBar: AppMain(),
           appBar: AppBar(
             title: Text("My Booking"),
             bottom: TabBar(indicatorWeight: 4.0, indicatorColor: Colors.white, tabs: [
